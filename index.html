@@ -9,6 +9,24 @@
     <!-- <script src="https://unpkg.com/lucide@latest"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js"></script> -->
      <script src="libs/tailwind.js"></script>
+     <script>
+        tailwind.config = {
+         theme: {   
+         extend: {
+          colors: {
+          emerald: {
+            50:  '#fdf2ec',
+            100: '#fbe1d1',
+            500: '#f0791f',
+            600: '#E85B17',
+            700: '#c94a10',
+            800: '#a83d0e',
+             }
+             }
+            }
+            }
+         };
+</script>
     <script src="libs/html5-qrcode.js" type="text/javascript"></script>
     <script src="libs/lucide.js"></script>
     <script src="libs/face-api.js"></script>
@@ -97,7 +115,7 @@
                 </div>
             </div>
             <h1 class="text-xl font-bold tracking-tight uppercase leading-tight"> REGISTRO DE ENTRADA Y SALIDA</h1>
-            <h1 class="text-xl font-bold tracking-tight uppercase leading-tight">Control de Asistencia</h1>
+
             <p id="system-status-text" class="text-emerald-100 text-[10px] font-medium uppercase tracking-widest opacity-80">Identificacion Facial</p>
         </header>
 
@@ -120,7 +138,7 @@
             <section id="view-qr" class="fade-in flex-1 flex flex-col items-center justify-center text-center">
                 <div class="p-6 bg-emerald-50 border border-emerald-100 rounded-2xl mb-8">
                      <i data-lucide="scan-face" class="w-16 h-16 text-emerald-600 mx-auto mb-4"></i>
-                    <h2 class="text-xl font-bold text-slate-800 mb-2">Control de Asistencia</h2>
+
                     <h1 class="text-xl font-bold tracking-tight uppercase leading-tight">REGISTRO DE ENTRADA Y SALIDA</h1>
                     <p class="text-sm text-slate-500">Presiona el botón para iniciar el reconocimiento facial</p>
                 </div>
@@ -142,7 +160,7 @@
                     <div id="face-ui-overlay" class="face-mask-overlay hidden"></div>
                     <div id="face-guide" class="face-guide hidden"></div>
                     <div id="face-guide" class="face-guide hidden"></div>
-<div id="countdown-display" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold z-30 text-8xl drop-shadow-lg"></div>
+                    <div id="countdown-display" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold z-30 text-8xl drop-shadow-lg"></div>
                     <button id="face-start-btn" onclick="initFaceCamera()" class="relative z-20 px-8 py-3 bg-emerald-600 text-white font-bold rounded-2xl shadow-xl hover:scale-105 transition-transform">Iniciar Captura Facial</button>
                     <div id="face-status-bubble" class="hidden absolute bottom-6 bg-black/70 backdrop-blur-md text-white px-5 py-2.5 rounded-full text-[10px] font-bold z-20 flex items-center gap-2 border border-white/10">
                         <span id="face-indicator" class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
@@ -226,7 +244,7 @@
         //};
 
         const API_LOCAL = "http://127.0.0.1:8000";
-        const API_CLOUD = "https://control-es-qr-281979635747.northamerica-south1.run.app";
+        const API_CLOUD = "https://certimaster-backend.duckdns.org";
 
         async function getApiBase() {
             try {
